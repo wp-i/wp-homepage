@@ -1,0 +1,218 @@
+.projects {
+  padding: clamp(4rem, 7vw, 7rem) var(--gutter);
+  background: var(--color-paper);
+}
+
+.projectList {
+  display: grid;
+  gap: clamp(1rem, 1.5vw, 1.5rem);
+  max-width: 120rem;
+  margin-inline: auto;
+}
+
+.project {
+  min-height: clamp(19rem, 30vw, 26rem);
+  opacity: 0.04;
+  filter: blur(0.22rem);
+  transform: translateY(2.75rem);
+  transition:
+    opacity 840ms var(--ease-out),
+    filter 840ms var(--ease-out),
+    transform 840ms var(--ease-out);
+}
+
+.project[data-visible='true'] {
+  opacity: 1;
+  filter: none;
+  transform: translateY(0);
+}
+
+.projectLink {
+  display: grid;
+  min-height: inherit;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: auto 1fr;
+  padding: clamp(2.5rem, 4vw, 4.25rem);
+  border-radius: var(--radius-panel);
+  background: var(--color-paper-soft);
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+}
+
+.projectLink:hover,
+.projectLink:focus-visible {
+  background: var(--color-paper-hover);
+  box-shadow: 0 1.5rem 4rem rgb(17 17 15 / 7%);
+  transform: translateY(-0.35rem);
+}
+
+.projectMeta {
+  grid-column: 1 / span 3;
+  display: flex;
+  gap: 1.1rem;
+  color: var(--color-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transform: translateY(0.75rem);
+  transition:
+    opacity 620ms 80ms var(--ease-out),
+    transform 720ms 80ms var(--ease-out);
+}
+
+.projectMeta span:first-child {
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+}
+
+.projectTitleBlock {
+  grid-column: 1 / span 6;
+  align-self: end;
+  padding-right: clamp(2rem, 5vw, 6rem);
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 720ms 140ms var(--ease-out),
+    transform 820ms 140ms var(--ease-out);
+}
+
+.project[data-visible='true'] .projectMeta,
+.project[data-visible='true'] .projectTitleBlock,
+.project[data-visible='true'] .projectCopy,
+.project[data-visible='true'] .arrowWrap {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projectTitleBlock h2 {
+  max-width: 13ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1.04;
+  word-break: keep-all;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.projectLink:hover .projectTitleBlock h2,
+.projectLink:focus-visible .projectTitleBlock h2 {
+  transform: translateX(0.3rem);
+}
+
+.chineseTitle {
+  display: block;
+  margin-top: 0.9rem;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+}
+
+.projectCopy {
+  grid-column: 7 / span 5;
+  grid-row: 1 / -1;
+  align-self: end;
+  max-width: 32rem;
+  padding-right: clamp(1.5rem, 3vw, 4rem);
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 720ms 200ms var(--ease-out),
+    transform 820ms 200ms var(--ease-out);
+}
+
+.projectCopy > p {
+  font-size: clamp(0.94rem, 1.05vw, 1.05rem);
+  line-height: 1.85;
+}
+
+.proof {
+  display: block;
+  margin-top: 1.5rem;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.15rem;
+  margin-top: 1.15rem;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.tags li + li::before {
+  margin-right: 1.15rem;
+  content: '·';
+}
+
+.arrowWrap {
+  grid-column: 12;
+  grid-row: 1;
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  justify-self: end;
+  border-radius: 50%;
+  background: var(--color-ink);
+  color: var(--color-inverse);
+  opacity: 0;
+  transform: translateY(0.75rem);
+  transition:
+    opacity 620ms 260ms var(--ease-out),
+    transform var(--duration-base) 260ms var(--ease-out);
+}
+
+.arrow {
+  width: 1rem;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.projectLink:hover .arrowWrap,
+.projectLink:focus-visible .arrowWrap {
+  transform: scale(1.06);
+  transition-delay: 0ms;
+}
+
+.projectLink:hover .arrow,
+.projectLink:focus-visible .arrow {
+  transform: translate(0.12rem, -0.12rem);
+}
+
+@media (max-width: 64rem) {
+  .projectLink {
+    padding: 2.5rem;
+  }
+
+  .projectTitleBlock {
+    grid-column: 1 / span 6;
+  }
+
+  .projectCopy {
+    grid-column: 7 / span 5;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+
+  .projectMeta,
+  .projectTitleBlock,
+  .projectCopy,
+  .arrowWrap {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,34 @@
+.kinetic {
+  position: relative;
+  width: min(112%, 41.5rem);
+  aspect-ratio: 1;
+  justify-self: end;
+  contain: layout paint style;
+  isolation: isolate;
+  animation: kinetic-enter 980ms 220ms var(--ease-out) both;
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0.96;
+}
+
+@keyframes kinetic-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kinetic {
+    animation: none;
+  }
+}

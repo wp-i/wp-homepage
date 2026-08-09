@@ -1,0 +1,93 @@
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  height: var(--header-height);
+  padding-inline: var(--gutter);
+  background: rgb(247 246 242 / 0%);
+  color: var(--color-ink);
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    backdrop-filter var(--duration-base) var(--ease-out);
+}
+
+.header[data-elevated='true'] {
+  background: rgb(247 246 242 / 86%);
+  box-shadow: 0 0.75rem 2.5rem rgb(17 17 15 / 4%);
+  backdrop-filter: blur(18px);
+}
+
+.mark {
+  width: fit-content;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  margin-right: clamp(2rem, 3vw, 3.75rem);
+}
+
+.navLink {
+  position: relative;
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  font-size: 0.82rem;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.navLink::after {
+  position: absolute;
+  bottom: 0.35rem;
+  left: 50%;
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 50%;
+  background: currentColor;
+  content: '';
+  opacity: 0;
+  transform: translate(-50%, 0.25rem) scale(0.5);
+  transition:
+    opacity var(--duration-fast) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  opacity: 0.58;
+}
+
+.navLink[aria-current='location']::after {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.githubLink {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-self: end;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+}
+
+.githubIcon {
+  width: 0.95rem;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.githubLink:hover .githubIcon,
+.githubLink:focus-visible .githubIcon {
+  transform: translate(0.2rem, -0.2rem);
+}

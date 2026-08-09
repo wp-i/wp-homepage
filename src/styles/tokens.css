@@ -1,0 +1,24 @@
+:root {
+  color-scheme: light;
+  --color-paper: #f7f6f2;
+  --color-paper-soft: #eeece6;
+  --color-paper-hover: #e8e5de;
+  --color-ink: #11110f;
+  --color-muted: #6f6d66;
+  --color-line: rgb(17 17 15 / 12%);
+  --color-inverse: #f7f6f2;
+  --font-sans: "Helvetica Neue", "PingFang SC", "Microsoft YaHei",
+    "Noto Sans CJK SC", Arial, sans-serif;
+  --font-display: "Iowan Old Style", "Noto Serif SC", "Source Han Serif SC",
+    "Songti SC", SimSun, Georgia, serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --gutter: clamp(3.5rem, 5.4vw, 6.75rem);
+  --header-height: 4.5rem;
+  --desktop-min-width: 64rem;
+  --radius-panel: clamp(0.8rem, 1.2vw, 1.25rem);
+  --duration-fast: 180ms;
+  --duration-base: 480ms;
+  --duration-slow: 820ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
