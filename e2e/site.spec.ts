@@ -83,8 +83,13 @@ test('paints the complete hero text beside the interactive visual', async ({ pag
   expect(viewport).not.toBeNull();
 
   if (visualBounds && viewport) {
-    expect(visualBounds.width).toBeGreaterThan(400);
-    expect(visualBounds.width).toBeLessThan(viewport.width * 0.5);
+    if (viewport.width <= 480) {
+      expect(visualBounds.width).toBeGreaterThan(viewport.width * 0.7);
+      expect(visualBounds.width).toBeLessThanOrEqual(viewport.width);
+    } else {
+      expect(visualBounds.width).toBeGreaterThan(400);
+      expect(visualBounds.width).toBeLessThan(viewport.width * 0.5);
+    }
   }
 
   if (visualBounds) {
@@ -234,4 +239,91 @@ test('loads without application console errors', async ({ page }) => {
   await page.reload();
   await page.waitForLoadState('networkidle');
   expect(errors).toEqual([]);
+});
+
+test('uses a single-column mobile layout on a continuous paper canvas', async ({
+  page,
+}) => {
+  const viewport = page.viewportSize();
+  test.skip(!viewport || viewport.width > 480, 'mobile viewport check');
+
+  const title = page.getByRole('heading', { level: 1, name: '做有用的软件' });
+  const visual = page.locator('[data-hero-visual]');
+  const titleBounds = await title.boundingBox();
+  const visualBounds = await visual.boundingBox();
+
+  expect(titleBounds).not.toBeNull();
+  expect(visualBounds).not.toBeNull();
+  if (titleBounds && visualBounds) {
+    expect(visualBounds.y).toBeGreaterThan(titleBounds.y + titleBounds.height);
+  }
+
+  const firstProject = page.locator('#work article').first();
+  await firstProject.scrollIntoViewIfNeeded();
+  await expect(firstProject).toHaveAttribute('data-visible', 'true');
+  await expect(firstProject).toHaveCSS('opacity', '1');
+
+  const projectTitleBounds = await firstProject.locator('h2').boundingBox();
+  const projectCopyBounds = await firstProject.locator('p').boundingBox();
+  expect(projectTitleBounds).not.toBeNull();
+  expect(projectCopyBounds).not.toBeNull();
+  if (projectTitleBounds && projectCopyBounds) {
+    expect(projectCopyBounds.y).toBeGreaterThan(
+      projectTitleBounds.y + projectTitleBounds.height,
+    );
+  }
+
+  const shell = await page.evaluate(() => {
+    const root = document.querySelector<HTMLElement>('#root');
+    const contact = document.querySelector<HTMLElement>('#contact');
+    const header = document.querySelector<HTMLElement>('#root > header');
+    const themeColor = document.querySelector<HTMLMetaElement>(
+      'meta[name="theme-color"]',
+    );
+    const projects = Array.from(
+      document.querySelectorAll<HTMLElement>('#work article'),
+    ).map((project) => {
+      const link = project.querySelector<HTMLAnchorElement>('a');
+      const content = project.querySelectorAll<HTMLElement>('h2, p, ul');
+      const linkBounds = link?.getBoundingClientRect();
+      const contentBottom = Math.max(
+        ...Array.from(content, (element) => element.getBoundingClientRect().bottom),
+      );
+
+      return {
+        contentBottom,
+        linkBottom: linkBounds?.bottom ?? 0,
+        linkLeft: linkBounds?.left ?? 0,
+        linkRight: linkBounds?.right ?? 0,
+      };
+    });
+
+    return {
+      bodyBackground: getComputedStyle(document.body).backgroundColor,
+      contactBackground: contact
+        ? getComputedStyle(contact).backgroundColor
+        : '',
+      headerRight: header?.getBoundingClientRect().right ?? 0,
+      htmlBackground: getComputedStyle(document.documentElement).backgroundColor,
+      overflow:
+        document.documentElement.scrollWidth -
+        document.documentElement.clientWidth,
+      projects,
+      rootBackground: root ? getComputedStyle(root).backgroundColor : '',
+      themeColor: themeColor?.content ?? '',
+    };
+  });
+
+  expect(shell.overflow).toBeLessThanOrEqual(1);
+  expect(shell.headerRight).toBeLessThanOrEqual(viewport?.width ?? 0);
+  expect(shell.htmlBackground).toBe('rgb(247, 246, 242)');
+  expect(shell.bodyBackground).toBe(shell.htmlBackground);
+  expect(shell.rootBackground).toBe(shell.htmlBackground);
+  expect(shell.contactBackground).toBe(shell.htmlBackground);
+  expect(shell.themeColor).toBe('#f7f6f2');
+  for (const project of shell.projects) {
+    expect(project.linkLeft).toBeGreaterThanOrEqual(0);
+    expect(project.linkRight).toBeLessThanOrEqual(viewport?.width ?? 0);
+    expect(project.contentBottom).toBeLessThanOrEqual(project.linkBottom);
+  }
 });

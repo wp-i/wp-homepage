@@ -3,7 +3,9 @@
   display: grid;
   min-height: max(100svh, 42rem);
   align-items: center;
-  padding: var(--header-height) var(--gutter) 4.5rem;
+  padding:
+    calc(var(--header-height) + env(safe-area-inset-top, 0px))
+    var(--gutter) 4.5rem;
   overflow: hidden;
   background: var(--color-paper);
 }
@@ -169,6 +171,67 @@
   .heroInner {
     grid-template-columns: minmax(28rem, 1.15fr) minmax(18rem, 0.85fr);
     gap: 1.5rem;
+  }
+}
+
+@media (max-width: 56rem) {
+  .hero {
+    min-height: max(100svh, 46rem);
+    padding-bottom: 3rem;
+  }
+
+  .heroInner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    transform: none;
+  }
+
+  .title {
+    width: 100%;
+    font-size: clamp(3.6rem, 10vw, 5.75rem);
+  }
+
+  .actions {
+    margin-top: 2rem;
+  }
+
+  .bottomMeta {
+    display: none;
+  }
+}
+
+@media (max-width: 48rem) {
+  .hero {
+    min-height: max(100svh, 42rem);
+    align-items: start;
+    padding-bottom: 2.5rem;
+  }
+
+  .heroInner {
+    gap: 0.5rem;
+    padding-top: clamp(2.5rem, 8vh, 4.5rem);
+  }
+
+  .eyebrow {
+    margin-bottom: 1.35rem;
+    font-size: 0.68rem;
+  }
+
+  .title {
+    font-size: clamp(3rem, 13.6vw, 4.2rem);
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+    margin-top: 1.75rem;
+  }
+
+  .primaryAction,
+  .secondaryAction {
+    min-width: 0;
+    padding-inline: 0.9rem;
   }
 }
 

@@ -1,5 +1,7 @@
 .contact {
-  padding: 0 var(--gutter) 2rem;
+  padding:
+    0 var(--gutter)
+    calc(2rem + env(safe-area-inset-bottom, 0px));
   background: var(--color-paper);
   opacity: 0.04;
   filter: blur(0.22rem);
@@ -100,6 +102,32 @@
 .footer a:hover,
 .footer a:focus-visible {
   opacity: 0.55;
+}
+
+@media (max-width: 48rem) {
+  .contact {
+    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .github {
+    min-height: 13rem;
+    padding: 1.5rem;
+  }
+
+  .github h2 {
+    max-width: 7ch;
+    font-size: clamp(2.35rem, 11vw, 3.15rem);
+    line-height: 1.05;
+  }
+
+  .arrowWrap {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .footer {
+    min-height: 5.5rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -6,7 +6,7 @@ Repository name: `wp-homepage`
 
 ## Context
 
-The product is a public, static, desktop-first personal page for `WP`. It links
+The product is a public, static, responsive personal page for `WP`. It links
 to one GitHub profile and four evidence-ranked repositories. Xiaomi MiMo is the
 primary visual and interaction quality benchmark; the implementation must remain
 original, lightweight, accessible, and straightforward to publish as open source.
@@ -20,12 +20,12 @@ original, lightweight, accessible, and straightforward to publish as open source
   pointer and keyboard.
 - Deliver one static production bundle with no backend, account, analytics, or
   credentials.
-- Support desktop CSS viewports from 1024 through 2560 pixels, with 1280x720 and
-  1366x768 treated as critical laptop cases.
+- Support CSS viewports from 360 through 2560 pixels, with 390x844 treated as a
+  critical mobile case and 1280x720 and 1366x768 as critical laptop cases.
 
 ## Non-goals
 
-- Mobile layouts, touch-specific interactions, or handset browser QA.
+- Native-app navigation patterns or interactions that require touch.
 - A CMS, blog, authentication, live GitHub dashboard, or runtime analytics.
 - Copying MiMo markup, source code, text, brand assets, or exact compositions.
 - A general component library, multi-route application, or runtime GitHub API.
@@ -80,6 +80,11 @@ secondary labels for local context.
 
 There is no CSS-in-JS runtime. Project entries share one layout and neutral
 surface system; no project-specific colors or decorative previews are allowed.
+
+The same document adapts responsively: the hero and project internals become a
+single column below their content-fit breakpoints. Shared gutters shrink through
+tokens, while safe-area padding and browser theme metadata keep the paper canvas
+continuous around mobile browser chrome.
 
 ## Page structure
 
@@ -160,6 +165,7 @@ the static output; pull requests run checks but never deploy.
 | Interaction | The bounded automatic camera motion uses an approximately six-second primary yaw cycle; pointer tilt follows the projected twin-lobed centerline; camera pose, interaction strength, and surface target use independent damped springs on entry and exit; local deformation, click waves, signal flow, entrance, scroll reveal, nav state, focus, and reduced motion preserve meaning |
 | Accessibility | Semantic headings, skip link, keyboard flow, visible focus, AA contrast, and safe external links pass |
 | Desktop adaptation | Chrome passes at 1024x768, 1280x720, 1366x768, 1440x900, and 1920x1080 without overflow or overlap |
+| Mobile adaptation | Chrome passes at 360x800 and 430x932; mobile WebKit passes at 390x844; safe areas and the paper background remain continuous |
 | Browser compatibility | Edge, Firefox, and WebKit pass at 1366x768 |
 | Quality | Lint, strict typecheck, deterministic tests, E2E tests, and production build pass |
 

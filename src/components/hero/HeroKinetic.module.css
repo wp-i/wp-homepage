@@ -27,6 +27,19 @@
   }
 }
 
+@media (max-width: 56rem) {
+  .kinetic {
+    width: min(72vw, 30rem);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 48rem) {
+  .kinetic {
+    width: min(100%, 22rem);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .kinetic {
     animation: none;

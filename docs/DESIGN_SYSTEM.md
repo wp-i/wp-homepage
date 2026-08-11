@@ -111,6 +111,9 @@ to justify a distinct user destination.
 - The Chinese headline owns the largest type and stands without supporting prose.
 - The title size and authored line break remain stable from 1024 through 2560 CSS
   px and at the critical 720/768 px laptop heights.
+- Below the two-column content-fit threshold, the title, actions, and kinetic
+  visual stack in that order. The headline remains on one line at 360 px and the
+  two actions share the available row without forcing horizontal overflow.
 - Actions are compact monochrome controls, never oversized display elements.
 - The right side contains one original monochrome kinetic Möbius ring built with
   Canvas. Its closed surface completes exactly one half-twist: crossing the seam
@@ -157,10 +160,12 @@ to justify a distinct user destination.
 - Reduced-motion mode exposes all content without transforms.
 - Focus uses a 2 px current-color outline with a 4 px offset.
 - Text and controls meet WCAG 2.2 AA contrast.
-- The supported surface is desktop-only. Do not add mobile breakpoints, handset
-  layouts, touch-specific behavior, or mobile QA requirements.
-- Verify 1024x768, 1280x720, 1366x768, 1440x900, and 1920x1080 in Chrome, plus
-  1366x768 in Edge, Firefox, and WebKit.
+- The supported surface is responsive from 360 through 2560 CSS px. Mobile keeps
+  the full content and direct links, uses a single-column reading order, and
+  respects safe-area insets without requiring touch-only behavior.
+- Verify 360x800, 390x844, 430x932, 1024x768, 1280x720, 1366x768, 1440x900, and
+  1920x1080 in Chrome where applicable, plus mobile WebKit at 390x844 and Edge,
+  Firefox, and WebKit at 1366x768.
 
 ## Visual QA
 
@@ -171,4 +176,5 @@ to justify a distinct user destination.
 - Are project entries direct, text-only, and free of a redundant preamble?
 - Are repeated lines and underlines absent?
 - Do hover, keyboard focus, scrolling, and reduced motion preserve meaning?
-- Are all required desktop sizes intentional and free of clipping or overflow?
+- Are all required mobile and desktop sizes intentional and free of clipping or
+  overflow?

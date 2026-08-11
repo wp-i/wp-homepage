@@ -7,8 +7,9 @@
   display: grid;
   grid-template-columns: 1fr auto auto;
   align-items: center;
-  height: var(--header-height);
+  height: calc(var(--header-height) + env(safe-area-inset-top, 0px));
   padding-inline: var(--gutter);
+  padding-top: env(safe-area-inset-top, 0px);
   background: rgb(247 246 242 / 0%);
   color: var(--color-ink);
   transition:
@@ -90,4 +91,15 @@
 .githubLink:hover .githubIcon,
 .githubLink:focus-visible .githubIcon {
   transform: translate(0.2rem, -0.2rem);
+}
+
+@media (max-width: 48rem) {
+  .navigation {
+    margin-right: clamp(1rem, 5vw, 1.75rem);
+  }
+
+  .navLink,
+  .githubLink {
+    font-size: 0.75rem;
+  }
 }

@@ -56,6 +56,27 @@ export default defineConfig({
         viewport: desktopViewport(1366, 768),
       },
     },
+    {
+      name: 'mobile-chrome-360x800',
+      use: {
+        ...devices['Pixel 5'],
+        viewport: desktopViewport(360, 800),
+      },
+    },
+    {
+      name: 'mobile-webkit-390x844',
+      use: {
+        ...devices['iPhone 13'],
+        viewport: desktopViewport(390, 844),
+      },
+    },
+    {
+      name: 'mobile-chrome-430x932',
+      use: {
+        ...devices['Pixel 5'],
+        viewport: desktopViewport(430, 932),
+      },
+    },
   ],
   webServer: {
     command: 'npx vite --host=127.0.0.1 --port=4317',

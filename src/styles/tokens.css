@@ -12,13 +12,19 @@
   --font-display: "Iowan Old Style", "Noto Serif SC", "Source Han Serif SC",
     "Songti SC", SimSun, Georgia, serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  --gutter: clamp(3.5rem, 5.4vw, 6.75rem);
+  --gutter: clamp(1.25rem, 5.4vw, 6.75rem);
   --header-height: 4.5rem;
-  --desktop-min-width: 64rem;
   --radius-panel: clamp(0.8rem, 1.2vw, 1.25rem);
   --duration-fast: 180ms;
   --duration-base: 480ms;
   --duration-slow: 820ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@media (max-width: 48rem) {
+  :root {
+    --header-height: 4.25rem;
+    --radius-panel: 0.8rem;
+  }
 }

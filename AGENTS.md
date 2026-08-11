@@ -47,11 +47,11 @@ agents. Read it before architecture work, dependency changes, or code edits.
 - Do not precede the current project list with a standalone count, manifesto, or
   oversized section-title chapter. The ranked work is the content and should
   begin directly after the hero transition.
-- The supported product is desktop-only. Do not add mobile layouts, handset
-  breakpoints, touch-specific behavior, mobile browser projects, or mobile QA
-  requirements. The minimum supported viewport is 1024 CSS px wide.
+- The supported product is responsive from 360 through 2560 CSS px. Mobile uses
+  the same content hierarchy in a deliberate single-column composition; do not
+  hide core content or replace real links with touch-only controls.
 - The experience must work without a backend, account, analytics, or secrets.
-- Visual polish, desktop adaptation, accessibility, performance, and reduced
+- Visual polish, responsive adaptation, accessibility, performance, and reduced
   motion are release requirements rather than optional cleanup.
 
 ## Required Work Sequence
@@ -135,21 +135,22 @@ decisions must name the reason, alternatives considered, and reversal cost.
   that require precise pointer movement.
 - Avoid pointer-only instructions when the action also supports keyboard use.
 
-## Desktop and Accessibility Release Gate
+## Responsive and Accessibility Release Gate
 
-- Support 1024 through 2560 CSS px without horizontal overflow, clipped focus
+- Support 360 through 2560 CSS px without horizontal overflow, clipped focus
   rings, overlapping text, or unreadable line lengths.
 - Treat 1280×720 and 1366×768 as the critical laptop cases; important content and
   navigation must remain usable at those constrained heights.
-- Keep one desktop layout system with measured adjustments around 1024 px. Do not
-  create a separate compact/mobile composition below the supported minimum.
+- Keep one responsive layout system. Use the two-column hero and project grid
+  where space permits, then stack them without changing content order on narrow
+  screens. Account for mobile safe-area insets and browser chrome backgrounds.
 - Preserve a logical heading outline and landmark structure.
 - Meet WCAG 2.2 AA contrast for text, controls, focus indicators, and meaningful
   graphics. Do not encode meaning by color alone.
 - Decorative media must be ignored by assistive technology; informative media
   requires concise alternative text.
-- Browser zoom is supported while the effective CSS viewport remains at least
-  1024 px; the desktop resolution matrix is the verification surface.
+- Browser zoom is supported while the effective CSS viewport remains inside the
+  360–2560 px range; the responsive resolution matrix is the verification surface.
 
 ## Project Selection and Ranking Gate
 
@@ -199,10 +200,12 @@ After an implementation change, run the smallest relevant subset, and run the
 full matrix before release:
 
 1. Formatting/lint, strict typecheck, deterministic tests, and production build.
-2. Chrome checks at 1024×768, 1280×720, 1366×768, 1440×900, and 1920×1080.
-3. Engine compatibility checks at 1366×768 in Edge, Firefox, and WebKit.
+2. Chrome checks at 360×800, 390×844, 430×932, 1024×768, 1280×720,
+   1366×768, 1440×900, and 1920×1080.
+3. Engine compatibility checks in mobile WebKit at 390×844 and at 1366×768 in
+   Edge, Firefox, and WebKit.
 4. Keyboard-only navigation, visible focus order, and external-link destinations.
-5. Reduced-motion mode on the desktop matrix.
+5. Reduced-motion mode on the responsive matrix.
 6. Browser console and network review: no application errors, broken local assets,
    mixed content, or unexpected provider requests.
 7. Lighthouse or equivalent audited checks for performance, accessibility, best
