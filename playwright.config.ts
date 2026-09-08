@@ -9,7 +9,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   reporter: process.env.CI ? 'github' : 'list',
   use: {
-    baseURL: 'http://127.0.0.1:4317',
+    baseURL: 'http://127.0.0.1:5173',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
@@ -64,6 +64,13 @@ export default defineConfig({
       },
     },
     {
+      name: 'mobile-chrome-390x844',
+      use: {
+        ...devices['Pixel 5'],
+        viewport: desktopViewport(390, 844),
+      },
+    },
+    {
       name: 'mobile-webkit-390x844',
       use: {
         ...devices['iPhone 13'],
@@ -79,8 +86,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npx vite --host=127.0.0.1 --port=4317',
-    url: 'http://127.0.0.1:4317',
+    command: 'npx vite --host=127.0.0.1 --port=5173',
+    url: 'http://127.0.0.1:5173',
     reuseExistingServer: !process.env.CI,
   },
 });

@@ -1,4 +1,3 @@
-import { Contact } from '../components/contact/Contact';
 import { Hero } from '../components/hero/Hero';
 import { Projects } from '../components/projects/Projects';
 import { SiteHeader } from '../components/header/SiteHeader';
@@ -16,7 +15,6 @@ export function App() {
       <main id="main-content" tabIndex={-1}>
         <Hero />
         <Projects />
-        <Contact />
       </main>
     </>
   );

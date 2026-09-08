@@ -1,121 +1,33 @@
-# Portfolio Project Selection Standard
+# Portfolio project selection
 
-Status: Required
-Review perspective: Technical interviewer
-Current evidence review: 2026-08-10
+状态：必需。意图版本：2026-09-07（取代旧的分数门槛与自动排序规则）。
 
-## Purpose
+作品集面向交流，平等呈现六个从小切口出发的小工具，以简介、特点和真实链接帮助访客理解项目。不设精选、更多或代表作层级；展示顺序由编辑判断决定，不由工程评分自动排序。
 
-The portfolio is an edited technical argument, not a chronological project list.
-Every displayed repository must show credible problem solving and provide enough
-public evidence for an interviewer to examine the work. The same standard applies
-to the current four projects and every future candidate.
+## 先过事实门槛
 
-## Mandatory Eligibility
+项目必须有稳定公开 GitHub URL，源码或可核查产物真实存在；问题、用户、约束、输出、运行边界与限制可诚实说明；无凭据、隐私、许可证或署名风险。每条公开陈述在 typed project data 中附 `reviewedAt` 日期和 `sourceUrl`。GitHub star 不是质量扣分项，陌生 star 只作为兴趣信号。
 
-A candidate must satisfy all of the following before scoring:
+## 编排依据
 
-1. The repository is public and has a real, stable GitHub destination.
-2. Its primary problem, users, constraints, and output can be stated honestly.
-3. The repository contains runnable source rather than only a concept, prompt,
-   screenshot, generated report, or README.
-4. Setup, dependencies, limitations, and license are documented well enough for
-   an external reviewer to understand the boundary.
-5. No claim shown on the portfolio depends on private evidence or invented data.
-6. The project has no unresolved credential, privacy, licensing, or attribution
-   issue that would make public promotion misleading.
+门槛通过后，按以下顺序评估并记录简短证据：
 
-Failure on any mandatory item blocks publication regardless of score.
+1. 独特视角：是否提出清楚、有个人判断的问题切口？
+2. 表现力：是否能用清楚的简介、可运行 demo 或 code-native 展示让人快速理解？
+3. 互动与交流价值：是否能引发试用、追问或技术讨论？
+4. 技术可信度：架构、边界、测试、发布和限制是否有证据？
 
-## Interview Score — 100 Points
+## 当前项目与事实
 
-| Dimension | Points | Interviewer question |
-| --- | ---: | --- |
-| Problem value | 20 | Is the problem real, specific, and worth solving? Does the solution show product judgment? |
-| Technical depth | 20 | Does the work contain meaningful architecture, state, integration, data, platform, reliability, or algorithmic difficulty? |
-| Delivery completeness | 20 | Can a reviewer run or inspect a coherent end-to-end result? Are install, failure, and release paths addressed? |
-| Engineering quality | 20 | Are boundaries, types, tests, CI, error handling, security, and maintainability credible? |
-| Evidence quality | 10 | Are claims supported by source, tests, real runs, releases, traces, or documented limitations? |
-| Technical communication | 10 | Can a reviewer quickly understand decisions, trade-offs, setup, scope, and remaining risk? |
+| 项目 | 页面定位 | 事实依据（截至） |
+| --- | --- | --- |
+| [webArt](https://github.com/wp-i/webArt) | 工业化的高质量网页设计呈现 | [源码与说明](https://github.com/wp-i/webArt)，2026-09-08 |
+| [comment-vision-claw](https://github.com/wp-i/comment-vision-claw) | 关键词热评抓取、截图/PDF；本地依赖与登录；AI 仅解释假设 | [仓库](https://github.com/wp-i/comment-vision-claw)，2026-09-07 |
+| [tft-trait-atlas](https://github.com/wp-i/tft-trait-atlas) | 在线 8–11 人口多纹章解算器，可复制代码 | [在线页](https://wp-i.github.io/tft-trait-atlas/)，2026-09-07 |
+| [github-deep-search](https://github.com/wp-i/github-deep-search) | 研发中：README 语义验收尚未关闭 | [仓库](https://github.com/wp-i/github-deep-search)，2026-09-07 |
+| [swordshield-notes](https://github.com/wp-i/swordshield-notes) | 早期版本；有 releases/tag `v0.1.0` 与 Windows x64 安装包 | [仓库](https://github.com/wp-i/swordshield-notes)，2026-09-07 |
+| [nodestitch](https://github.com/wp-i/nodestitch) | 原型；暂无公开 release | [仓库](https://github.com/wp-i/nodestitch)，2026-09-07 |
 
-Scorers must cite repository evidence and record the review date. Stars, topic
-fashion, visual polish, and repository size are context only; they are not score
-dimensions.
+新增项目须重新核查全表，更新 typed data 与本文件的日期和来源。
 
-## Publication and Ordering Rules
-
-- Publication threshold: at least 60/100 after all mandatory checks pass.
-- Primary order: descending total score.
-- First tie-break: engineering quality.
-- Second tie-break: delivery completeness.
-- Final tie-break: the more recently re-evaluated project.
-- The UI number is assigned after sorting; a project does not own a permanent
-  visual position.
-- A new project triggers re-evaluation of every displayed project, not just the
-  candidate.
-- A material release, architecture rewrite, new test/release system, or serious
-  regression also triggers re-evaluation.
-
-Scores live beside project content in `src/content/site.ts`. The page derives its
-order from those scores; visual placement must never be edited independently.
-
-## Current Evaluation
-
-| Rank | Project | Problem | Depth | Delivery | Engineering | Evidence | Communication | Total |
-| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1 | GitHub Deep Search | 18 | 20 | 18 | 20 | 10 | 10 | **96** |
-| 2 | Nodestitch | 16 | 18 | 19 | 20 | 10 | 10 | **93** |
-| 3 | SwordShield Notes | 15 | 16 | 18 | 16 | 8 | 9 | **82** |
-| 4 | Comment Vision Claw | 17 | 17 | 12 | 7 | 5 | 8 | **66** |
-
-### 1. GitHub Deep Search
-
-Strongest interview signal. The repository shows a coherent parse → discovery →
-evidence → analysis → report pipeline; explicit ownership boundaries; evidence
-gating; structured failures and traces; CLI, Web, Docker, and MCP projections;
-ADRs; real-run evaluation artifacts; CI; and broad automated coverage. Its main
-risk is provider-dependent real execution, which the repository documents rather
-than hiding. Re-evaluated on 2026-08-10; score unchanged.
-
-### 2. Nodestitch
-
-Strongest desktop engineering signal. Commit `7b0efa0` contains a coherent Tauri
-2, React, TypeScript, Rust, and SQLite implementation with separate domain,
-application, persistence, desktop, and presentation owners. `TimelineController`
-publishes state only after persistence succeeds and serializes mutations against
-the last committed document. Rust uses immediate SQLite transactions and tests
-migration, invalid data, corrupt payloads, and failed writes preserving the last
-commit. Windows CI runs frontend tests/build plus Rust tests and Clippy. On
-2026-08-10, the local audit passed 13 frontend tests, 4 Rust tests, and the
-production build. The handoff records real Windows 10 scaling, resize, cold-start,
-installer, shortcut, upgrade, and uninstall checks. The remaining delivery gap is
-the intentionally unclaimed Windows 11/ARM64 and clean-machine coverage.
-
-### 3. SwordShield Notes
-
-Strong shipped-product signal. It crosses React/TypeScript, Rust, SQLite, native
-Windows window behavior, drag-and-drop state, installer hooks, and release
-packaging. The repository has Windows CI, release automation, a `v0.1.0` tag,
-explicit Windows 10/11 compatibility notes, and focused tests. Its scope is
-smaller and its automated evidence is thinner than the two projects above, but
-the end-to-end desktop delivery remains credible. Re-evaluated on 2026-08-10;
-score unchanged.
-
-### 4. Comment Vision Claw
-
-Strong problem and integration idea: browser automation, MediaCrawler, precise
-comment screenshots, optional LLM analysis, PDF generation, Web UI, CLI, and MCP.
-However, the repository still lacks automated test files, a CI workflow, and a
-release tag, and it retains a heavier external/login-dependent run path. These
-gaps reduce delivery, engineering, and evidence scores despite meaningful
-technical breadth. Re-evaluated on 2026-08-10; score unchanged.
-
-## Adding a Future Project
-
-1. Audit the repository at its current default branch and record the commit/date.
-2. Verify every mandatory eligibility item.
-3. Score all six dimensions with file-, test-, release-, or run-level evidence.
-4. Add the dated evaluation to the typed content source.
-5. Re-score existing projects using the same evidence standard.
-6. Run unit tests that verify the derived order and publication threshold.
-7. Update this document's table and evidence notes in the same change.
+2026-09-08 编辑顺序：webArt → comment-vision-claw → tft-trait-atlas → github-deep-search → swordshield-notes → nodestitch。先展示设计生产方法、内容工具与可在线体验的解算器，再呈现研发和桌面实验；所有项目保持同等层级。

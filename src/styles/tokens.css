@@ -4,9 +4,14 @@
   --color-paper-soft: #eeece6;
   --color-paper-hover: #e8e5de;
   --color-ink: #11110f;
-  --color-muted: #6f6d66;
+  --color-muted: #66645d;
   --color-line: rgb(17 17 15 / 12%);
   --color-inverse: #f7f6f2;
+  --color-accent: #d9ee86;
+  --content-width: 90rem;
+  --page-width: 80rem;
+  --row-gap: clamp(1.25rem, 2.4vw, 2.5rem);
+  --row-padding: clamp(2rem, 3.4vw, 3.5rem);
   --font-sans: "Helvetica Neue", "PingFang SC", "Microsoft YaHei",
     "Noto Sans CJK SC", Arial, sans-serif;
   --font-display: "Iowan Old Style", "Noto Serif SC", "Source Han Serif SC",

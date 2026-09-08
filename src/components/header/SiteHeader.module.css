@@ -8,9 +8,9 @@
   grid-template-columns: 1fr auto auto;
   align-items: center;
   height: calc(var(--header-height) + env(safe-area-inset-top, 0px));
-  padding-inline: var(--gutter);
+  padding-inline: max(var(--gutter), calc((100% - var(--page-width)) / 2));
   padding-top: env(safe-area-inset-top, 0px);
-  background: rgb(247 246 242 / 0%);
+  background: var(--color-paper);
   color: var(--color-ink);
   transition:
     background-color var(--duration-base) var(--ease-out),
@@ -19,8 +19,8 @@
 }
 
 .header[data-elevated='true'] {
-  background: rgb(247 246 242 / 86%);
-  box-shadow: 0 0.75rem 2.5rem rgb(17 17 15 / 4%);
+  background: rgb(247 246 242 / 96%);
+  box-shadow: 0 1px 0 var(--color-line);
   backdrop-filter: blur(18px);
 }
 
@@ -35,6 +35,7 @@
 
 .navigation {
   display: flex;
+  gap: clamp(1rem, 2.2vw, 2rem);
   align-items: center;
   margin-right: clamp(2rem, 3vw, 3.75rem);
 }
@@ -44,7 +45,7 @@
   display: inline-flex;
   min-height: 2.75rem;
   align-items: center;
-  font-size: 0.82rem;
+  font-size: 0.875rem;
   transition: opacity var(--duration-fast) var(--ease-out);
 }
 
@@ -66,7 +67,8 @@
 
 .navLink:hover,
 .navLink:focus-visible {
-  opacity: 0.58;
+  text-decoration: underline;
+  text-underline-offset: .35em;
 }
 
 .navLink[aria-current='location']::after {
@@ -80,7 +82,7 @@
   align-items: center;
   justify-self: end;
   gap: 0.45rem;
-  font-size: 0.78rem;
+  font-size: 0.875rem;
 }
 
 .githubIcon {

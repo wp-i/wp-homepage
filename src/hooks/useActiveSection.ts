@@ -5,7 +5,6 @@ import type { SectionId } from '../content/site';
 const sectionIds: readonly SectionId[] = [
   'top',
   'work',
-  'contact',
 ];
 
 export function useActiveSection(): SectionId {

@@ -1,60 +1,23 @@
 import { render, screen, within } from '@testing-library/react';
-
 import { App } from './App';
-
+import { site } from '../content/site';
 describe('App', () => {
-  it('renders the concise WP statement and project hierarchy', () => {
+  it('shows the identity, small-scope work and navigation', () => {
     render(<App />);
-
-    expect(
-      screen.getByRole('heading', { level: 1, name: '做有用的软件' }),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole('heading', { name: 'GitHub Deep Search' }),
-    ).toBeInTheDocument();
-    expect(screen.queryByText('三个项目')).not.toBeInTheDocument();
-    expect(
-      screen.queryByText(/认真理解问题，把复杂路径变成/),
-    ).not.toBeInTheDocument();
-  });
-
-  it('exposes the confirmed GitHub destinations as safe external links', () => {
-    render(<App />);
-
-    const destinations = [
-      'https://github.com/wp-i',
-      'https://github.com/wp-i/nodestitch',
-      'https://github.com/wp-i/swordshield-notes',
-      'https://github.com/wp-i/comment-vision-claw',
-      'https://github.com/wp-i/github-deep-search',
-    ];
-
-    destinations.forEach((destination) => {
-      const links = screen
-        .getAllByRole('link')
-        .filter((link) => link.getAttribute('href') === destination);
-
-      expect(links.length).toBeGreaterThan(0);
-      links.forEach((link) => {
-        expect(link).toHaveAttribute('target', '_blank');
-        expect(link).toHaveAttribute('rel', 'noreferrer');
-      });
-    });
-  });
-
-  it('provides a skip link and restrained in-page navigation', () => {
-    render(<App />);
-
-    expect(screen.getByRole('link', { name: '跳到主要内容' })).toHaveAttribute(
-      'href',
-      '#main-content',
-    );
+    expect(screen.getByRole('heading', { level: 1, name: '做有用的软件' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'tft-trait-atlas' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'webArt' })).toBeInTheDocument();
     const navigation = screen.getByRole('navigation', { name: '主要导航' });
-    expect(navigation).toBeInTheDocument();
-    expect(within(navigation).getByRole('link', { name: '项目' })).toHaveAttribute(
-      'href',
-      '#work',
-    );
-    expect(within(navigation).queryByRole('link', { name: /关于|原则/ })).toBeNull();
+    expect(within(navigation).getByRole('link', { name: '作品' })).toHaveAttribute('href', '#work');
+  });
+  it('keeps all external links safe and avoids nested links', () => {
+    const { container } = render(<App />);
+    const externalLinks = screen.getAllByRole('link').filter(link => link.getAttribute('href')?.startsWith('https:'));
+    for (const link of externalLinks) {
+      expect(link).toHaveAttribute('target', '_blank');
+      expect(link).toHaveAttribute('rel', 'noreferrer');
+    }
+    for (const project of site.projects) expect(externalLinks.some(link => link.getAttribute('href') === project.sourceUrl)).toBe(true);
+    expect(container.querySelector('a a')).toBeNull();
   });
 });
