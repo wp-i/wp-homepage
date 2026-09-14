@@ -11,7 +11,7 @@ Warm white paper, dark ink, editorial Chinese typography and restrained lime acc
 
 All six projects have equal status and appear in one single-column editorial directory. On desktop each row aligns its sequence number, canonical English project name, Chinese positioning and introduction, characteristics, status and links into readable columns. On narrow screens those fields stack in the same order without horizontal scrolling. Project names remain canonical English; Chinese copy supplies context.
 
-The directory contains `tft-trait-atlas`, `comment-vision-claw`, `webArt`, `github-deep-search` (研发中), `swordshield-notes` (早期版本) and `nodestitch` (原型). It has no screenshots, source disclosure expansion or dark TFT panel. TFT keeps a small page-level experience button and a real native dialog.
+The directory contains `webArt`, `comment-vision-claw`, `tft-trait-atlas`, `swordshield-notes` (早期版本) and `nodestitch` (原型). It has no screenshots, source disclosure expansion or dark TFT panel. TFT keeps a small page-level experience button and a real native dialog.
 
 ## Interaction and accessibility
 

@@ -8,8 +8,8 @@
 - 中文负责 hero、导航、section 标签与 CTA；项目标题保留 canonical English 名称，并可有中文语境。
 - 主导航只指向实际内容；正常纵向滚动，不加路由、标签页、轮播或空章节。
 - 保留暖白底、克制留白与编辑感；使用简介、特点、真实链接和克制酸橙强调色。取消 MiMo 强制对齐，保持原创 WP 识别。
-- 六个项目平等展示为小而美的小切口工具，按洞察与交流价值编排，不设“精选/更多/代表作”层级。TFT 保留轻量页内体验按钮与真实 dialog；不在首页展示 webArt 或 TFT 截图。
-- 展示 `tft-trait-atlas`、`comment-vision-claw`、`webArt`、`github-deep-search`（研发中）、`swordshield-notes`（早期版本）、`nodestitch`（原型）。所有外链必须真实、键盘可访问且新窗口使用 `rel="noreferrer"`。
+- 五个项目平等展示为小而美的小切口工具，按洞察与交流价值编排，不设“精选/更多/代表作”层级。TFT 保留轻量页内体验按钮与真实 dialog；不在首页展示 webArt 或 TFT 截图。
+- 展示 `tft-trait-atlas`、`comment-vision-claw`、`webArt`、`swordshield-notes`（早期版本）、`nodestitch`（原型）。已废弃的项目不出现在展示内容、链接或项目数据中。所有外链必须真实、键盘可访问且新窗口使用 `rel="noreferrer"`。
 - 所有 public statement 写明日期与 `sourceUrl`。低 star 不扣分；陌生 star 仅作兴趣信号，不得替代代码、运行、发布或限制证据。
 
 ## 工程与交付

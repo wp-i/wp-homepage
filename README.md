@@ -7,9 +7,8 @@ WP 的单页作品集，核心句是「做有用的软件」。页面用中文�
 1. [webArt](https://github.com/wp-i/webArt)：工业化的高质量网页设计呈现。
 2. [comment-vision-claw](https://github.com/wp-i/comment-vision-claw)：关键词热评抓取、截图与 PDF；本地依赖和登录，AI 分析只解释假设。
 3. [tft-trait-atlas](https://wp-i.github.io/tft-trait-atlas/)：8–11 人口多纹章解算并复制代码。
-4. [github-deep-search](https://github.com/wp-i/github-deep-search)：研发中，README 语义验收尚未关闭。
-5. [swordshield-notes](https://github.com/wp-i/swordshield-notes)：早期版本，含 `v0.1.0` Windows x64 安装包。
-6. [nodestitch](https://github.com/wp-i/nodestitch)：原型，暂无公开 release。
+4. [swordshield-notes](https://github.com/wp-i/swordshield-notes)：早期版本，含 `v0.1.0` Windows x64 安装包。
+5. [nodestitch](https://github.com/wp-i/nodestitch)：原型，暂无公开 release。
 
 项目以真实可核查门槛、独特视角、表现力和互动/交流价值编排，详见 [`docs/PROJECT_SELECTION.md`](docs/PROJECT_SELECTION.md)。
 

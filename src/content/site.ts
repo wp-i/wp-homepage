@@ -59,16 +59,6 @@ const projects: readonly Project[] = [
     facts: ['多枚纹章一起算', '8–11 人口独立求解', '复制小队代码'],
   },
   {
-    slug: 'github-deep-search', title: 'github-deep-search', chineseTitle: '深度搜索',
-    category: '开源 × 证据检索', status: '研发中', hook: '找到仓库，也找到采用它的理由。',
-    description: '用自然语言描述需求，沿 README、源码与配置寻找依据，区分已经确认的能力和尚未确认的部分。',
-    insight: '搜索结果的标题相似，不等于实现满足需求。将每项判断连接到仓库证据，才能继续讨论是否值得采用。',
-    boundary: '当前处于重建和开发测试阶段，真实语义验收尚未完成；需要 GitHub 与模型凭据。',
-    reviewedAt: '2026-09-07', sourceUrl: 'https://github.com/wp-i/github-deep-search',
-    links: [{ label: '查看研发进展', href: 'https://github.com/wp-i/github-deep-search', primary: true }],
-    facts: ['自然语言需求', '仓库证据', '有边界的判断'],
-  },
-  {
     slug: 'swordshield-notes', title: 'swordshield-notes', chineseTitle: '剑盾纪事',
     category: '桌面 × 轻量规划', status: '早期版本', hook: '一些事要推进，一些事要守住。',
     description: '用“剑”与“盾”整理两类任务，把冒险感带回 Windows 桌面，同时让记录尽量少打断正在做的事。',

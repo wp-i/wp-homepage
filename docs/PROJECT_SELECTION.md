@@ -24,10 +24,9 @@
 | [webArt](https://github.com/wp-i/webArt) | 工业化的高质量网页设计呈现 | [源码与说明](https://github.com/wp-i/webArt)，2026-09-08 |
 | [comment-vision-claw](https://github.com/wp-i/comment-vision-claw) | 关键词热评抓取、截图/PDF；本地依赖与登录；AI 仅解释假设 | [仓库](https://github.com/wp-i/comment-vision-claw)，2026-09-07 |
 | [tft-trait-atlas](https://github.com/wp-i/tft-trait-atlas) | 在线 8–11 人口多纹章解算器，可复制代码 | [在线页](https://wp-i.github.io/tft-trait-atlas/)，2026-09-07 |
-| [github-deep-search](https://github.com/wp-i/github-deep-search) | 研发中：README 语义验收尚未关闭 | [仓库](https://github.com/wp-i/github-deep-search)，2026-09-07 |
 | [swordshield-notes](https://github.com/wp-i/swordshield-notes) | 早期版本；有 releases/tag `v0.1.0` 与 Windows x64 安装包 | [仓库](https://github.com/wp-i/swordshield-notes)，2026-09-07 |
 | [nodestitch](https://github.com/wp-i/nodestitch) | 原型；暂无公开 release | [仓库](https://github.com/wp-i/nodestitch)，2026-09-07 |
 
 新增项目须重新核查全表，更新 typed data 与本文件的日期和来源。
 
-2026-09-08 编辑顺序：webArt → comment-vision-claw → tft-trait-atlas → github-deep-search → swordshield-notes → nodestitch。先展示设计生产方法、内容工具与可在线体验的解算器，再呈现研发和桌面实验；所有项目保持同等层级。
+2026-09-08 编辑顺序：webArt → comment-vision-claw → tft-trait-atlas → swordshield-notes → nodestitch。先展示设计生产方法、内容工具与可在线体验的解算器，再呈现桌面实验；所有项目保持同等层级。
