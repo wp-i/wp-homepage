@@ -9,6 +9,9 @@
 .projectsTitleGroup h3 { font-family:var(--font-sans); font-size:clamp(1.15rem,1.65vw,1.55rem); font-weight:500; line-height:1.35; letter-spacing:-.035em; overflow-wrap:anywhere; }
 .projectsTitleGroup p { margin-top:.7rem; color:var(--color-muted); font-size:.875rem; line-height:1.7; }
 .projectsIcon { display:inline-block; width:1.75rem; height:1.75rem; margin-right:.55rem; vertical-align:-.35rem; }
+.projectsItem[data-platform="windows"] .projectsTitleGroup h3 { display:flex; align-items:flex-start; gap:.55rem; }
+.projectsItem[data-platform="windows"] .projectsTitleGroup h3 > span { min-width:0; }
+.projectsItem[data-platform="windows"] .projectsIcon { flex:0 0 28px; width:28px; height:28px; margin:0; object-fit:contain; }
 .projectsBody { min-width:0; }
 .projectsMeta { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem 1rem; margin-bottom:.85rem; color:var(--color-muted); font-size:.75rem; line-height:1.6; }
 .projectsMeta span:last-child { padding:.1rem .45rem; background:var(--color-paper-soft); }
@@ -16,6 +19,7 @@
 .projectsFacts { display:flex; flex-wrap:wrap; gap:.35rem .8rem; margin-top:1rem; color:var(--color-muted); font-size:.75rem; line-height:1.8; }
 .projectsFacts li + li::before { content:'/'; margin-right:.8rem; color:var(--color-muted); }
 .projectsLinks { display:flex; flex-direction:column; align-items:stretch; min-width:0; gap:.2rem; }
+.projectsWindowsLinks { display:grid; grid-template-columns:minmax(0,1fr); gap:.2rem; }
 .projectsLink,.projectsLinkPrimary { display:inline-flex; align-items:center; justify-content:space-between; gap:.6rem; min-height:2.75rem; padding:.5rem 0; font-size:.8125rem; line-height:1.5; color:var(--color-muted); }
 .projectsLinkPrimary { color:var(--color-ink); font-weight:500; border-bottom:1px solid var(--color-line); }
 .projectsLinkIcon { width:.875rem; flex:0 0 auto; transition:transform var(--duration-fast) var(--ease-out); }
@@ -32,6 +36,7 @@ button.projectsLink { border:0; background:transparent; font-family:inherit; tex
 @media(max-width:64rem) {
   .projectsItem { grid-template-columns:1.8rem minmax(0,1fr) minmax(0,1.4fr); }
   .projectsLinks { grid-column:3; flex-direction:row; flex-wrap:wrap; column-gap:1.2rem; }
+  .projectsWindowsLinks { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem; }
   .projectsLink,.projectsLinkPrimary { gap:.65rem; }
 }
 @media(max-width:48rem) {

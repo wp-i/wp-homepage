@@ -11,6 +11,7 @@
 - 六个项目平等展示为小而美的小切口工具，按洞察与交流价值编排，不设“精选/更多/代表作”层级。TFT 保留轻量页内体验按钮与真实 dialog；不在首页展示 webArt 或 TFT 截图。
 - 展示 `tft-trait-atlas`、`comment-vision-claw`、`webArt`、`swordshield-notes`（早期版本）、`nodestitch`（原型）、`Reelink`（Windows 本地工具）。已废弃的项目不出现在展示内容、链接或项目数据中。所有外链必须真实、键盘可访问且新窗口使用 `rel="noreferrer"`。
 - 所有 public statement 写明日期与 `sourceUrl`。低 star 不扣分；陌生 star 仅作兴趣信号，不得替代代码、运行、发布或限制证据。
+- 三个 Windows 项目共用 28×28 原始品牌图标槽位和操作布局；操作统一为“GitHub 源码”“获取与使用”，后者指向各项目说明页，不伪造未发布安装包的下载入口。长标题换行、窄屏操作等宽两列都必须保持一致。
 
 ## 工程与交付
 

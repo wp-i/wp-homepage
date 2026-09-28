@@ -24,3 +24,11 @@
 - 仅移动数据条目，保留全部项目事实、其他项目相对顺序和布局。README、内容顺序测试与 E2E 预期同步。
 - lint、typecheck、4 项单元/组件测试及生产构建通过；Chrome 1366×768 和 390×844 共 12 项 E2E 通过。生产页面实际读取顺序为 webArt、comment-vision-claw、tft-trait-atlas、Reelink、swordshield-notes、nodestitch，Reelink 编号为 04。
 - 本地未重复全浏览器矩阵；推送后的现有 CI 继续执行完整矩阵，实际远端结果以对应提交的 Actions 为准。
+
+## 2026-09-29 — Windows 项目统一展示
+
+- 将 Reelink、swordshield-notes、nodestitch 标记为 Windows 项目，使用各自公开仓库中的原始品牌图标，统一放入 28×28 图标槽位；长标题使用独立文本列，换行不会挤压图标。
+- 三个项目统一为两个操作：`GitHub 源码`、`获取与使用`。桌面端为等宽纵向入口，窄屏为等宽两列；入口均指向真实仓库或 README，不把不存在的安装包写成下载链接。
+- 为剑盾纪事和 Nodestitch 增加图标与许可证副本，来源和固定 Git blob 记录在 `THIRD_PARTY_NOTICES.md`；Reelink 图标沿用上一轮已核查的公开提交。
+- 保留现有顺序与页面网格，Reelink 仍为第 04 项；前三个非 Windows 项目不改变图标或操作规则。
+- 本轮最终验证：lint、typecheck、5 项 Vitest 测试、生产构建通过；Chrome 1366×768 与移动 Chrome 390×844 共 12 项 E2E 通过。上一轮完整矩阵的 Firefox 启动限制仍仅是本机环境问题，未将其计为通过。

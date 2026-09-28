@@ -16,4 +16,17 @@ describe('project content', () => {
       for (const link of project.links) expect(new URL(link.href).protocol).toBe('https:');
     }
   });
+
+  it('keeps Windows projects on the shared icon and action contract', () => {
+    const windows = site.projects.filter(project => project.platform === 'windows');
+    expect(windows.map(project => project.slug)).toEqual(['reelink', 'swordshield-notes', 'nodestitch']);
+    for (const project of windows) {
+      expect(project.icon).toMatch(/^projects\/(reelink\.svg|swordshield-notes\.png|nodestitch\.svg)$/);
+      expect(project.links.map(link => link.label)).toEqual(['GitHub 源码', '获取与使用']);
+      const [sourceLink, readmeLink] = project.links;
+      expect(sourceLink).toMatchObject({ href: project.sourceUrl, primary: true });
+      expect(readmeLink).toBeDefined();
+      expect(readmeLink?.href).toBe(`https://github.com/wp-i/${project.slug}#readme`);
+    }
+  });
 });

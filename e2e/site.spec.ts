@@ -22,12 +22,32 @@ test('renders the redesigned portfolio contract', async ({ page }) => {
 
 test('keeps every external link safe', async ({ page }) => {
   await expect(page.locator('#work details, #webart img, #tft-trait-atlas img')).toHaveCount(0);
-  const reelink = page.locator('#reelink');
-  await reelink.scrollIntoViewIfNeeded();
-  await expect(reelink.locator('img')).toHaveAttribute('alt', '');
-  await expect(reelink.locator('img')).toHaveJSProperty('naturalWidth', 256);
-  await expect(reelink.locator('img')).toHaveCSS('width', '28px');
-  await expect(reelink.getByRole('link').first()).toHaveAttribute('href', 'https://github.com/wp-i/reelink');
+  await expect(page.locator('#work article[data-platform="windows"]')).toHaveCount(3);
+  for (const slug of ['reelink', 'swordshield-notes', 'nodestitch']) {
+    const project = page.locator(`#${slug}`);
+    await project.scrollIntoViewIfNeeded();
+    const icon = project.locator('h3 img');
+    await expect(icon).toHaveCount(1);
+    await expect(icon).toHaveAttribute('alt', '');
+    await expect.poll(() => icon.evaluate((node) => node instanceof HTMLImageElement && node.complete && node.naturalWidth > 0)).toBe(true);
+    await expect(icon).toHaveCSS('width', '28px');
+    await expect(icon).toHaveCSS('height', '28px');
+    const actions = project.getByRole('link');
+    await expect(actions).toHaveText(['GitHub 源码', '获取与使用']);
+    await expect(actions.first()).toHaveAttribute('href', `https://github.com/wp-i/${slug}`);
+    const layout = await project.evaluate((node) => {
+      const image = node.querySelector('h3 img')!.getBoundingClientRect();
+      const title = node.querySelector('h3 > span')!.getBoundingClientRect();
+      const links = Array.from(node.querySelectorAll('a')).map((link) => link.getBoundingClientRect());
+      const narrow = window.matchMedia('(max-width:64rem)').matches;
+      return {
+        titleAligned: Math.abs(image.top - title.top) <= 1 && title.left >= image.right,
+        equalActions: Math.abs(links[0].width - links[1].width) <= 1 && Math.abs(links[0].height - links[1].height) <= 1,
+        actionsAligned: narrow ? Math.abs(links[0].top - links[1].top) <= 1 : Math.abs(links[0].left - links[1].left) <= 1,
+      };
+    });
+    expect(layout).toEqual({ titleAligned: true, equalActions: true, actionsAligned: true });
+  }
   const links = page.locator('a[target="_blank"]');
   expect(await links.count()).toBeGreaterThan(5);
   for (const link of await links.all()) {

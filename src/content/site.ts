@@ -4,6 +4,7 @@ export type Project = {
   readonly title: string;
   readonly chineseTitle: string;
   readonly icon?: string;
+  readonly platform?: 'windows';
   readonly category: string;
   readonly status: string;
   readonly hook: string;
@@ -60,39 +61,42 @@ const projects: readonly Project[] = [
     facts: ['多枚纹章一起算', '8–11 人口独立求解', '复制小队代码'],
   },
   {
-    slug: 'reelink', title: 'Reelink', chineseTitle: '扫码与影视整理', icon: 'projects/reelink.svg',
+    slug: 'reelink', title: 'Reelink', chineseTitle: '扫码与影视整理', icon: 'projects/reelink.svg', platform: 'windows',
     category: '桌面 × 本地小工具', status: 'Windows 工具', hook: '读出截图里的链接，理清文件里的名字。',
     description: '从截图中本地识别二维码，预览影视文件的新名称，再确认应用；需要的资源网站由自己添加，在紧凑窗口里随手打开。',
     insight: '扫码和整理文件都是短暂的小动作。把它们放进一个轻量窗口，保留手动确认与可撤销的余地，让工具少打断正在做的事。',
     boundary: '仅支持 Windows，本地优先，无运行时 LLM 或遥测。更名规则需人工核对，操作前预览、执行后可持久化撤销；资源入口不内置网站，仅点击后联网。0.1.9 源码已公开，该版本尚无 Release 安装包。',
     reviewedAt: '2026-09-28', sourceUrl: 'https://github.com/wp-i/reelink',
     links: [
-      { label: '查看项目与源码', href: 'https://github.com/wp-i/reelink', primary: true },
-      { label: '了解使用方法', href: 'https://github.com/wp-i/reelink#二维码' },
+      { label: 'GitHub 源码', href: 'https://github.com/wp-i/reelink', primary: true },
+      { label: '获取与使用', href: 'https://github.com/wp-i/reelink#readme' },
     ],
     facts: ['本地二维码识别', '更名预览与撤销', '自定义资源入口'],
   },
   {
-    slug: 'swordshield-notes', title: 'swordshield-notes', chineseTitle: '剑盾纪事',
+    slug: 'swordshield-notes', title: 'swordshield-notes', chineseTitle: '剑盾纪事', icon: 'projects/swordshield-notes.png', platform: 'windows',
     category: '桌面 × 轻量规划', status: '早期版本', hook: '一些事要推进，一些事要守住。',
     description: '用“剑”与“盾”整理两类任务，把冒险感带回 Windows 桌面，同时让记录尽量少打断正在做的事。',
     insight: '任务不必只有完成与未完成。双分组提供一种不同的组织方式；不抢焦点的桌面形态，让提醒和工作并存。',
     boundary: '面向 Windows 的早期版本，数据保存在本地。安装与支持范围以发布说明为准。',
     reviewedAt: '2026-09-07', sourceUrl: 'https://github.com/wp-i/swordshield-notes',
     links: [
-      { label: '查看 Windows 版本', href: 'https://github.com/wp-i/swordshield-notes/releases/tag/v0.1.0', primary: true },
-      { label: 'GitHub 源码', href: 'https://github.com/wp-i/swordshield-notes' },
+      { label: 'GitHub 源码', href: 'https://github.com/wp-i/swordshield-notes', primary: true },
+      { label: '获取与使用', href: 'https://github.com/wp-i/swordshield-notes#readme' },
     ],
     facts: ['剑与盾双分组', '本地数据', '桌面常驻'],
   },
   {
-    slug: 'nodestitch', title: 'nodestitch', chineseTitle: '节点时间线',
+    slug: 'nodestitch', title: 'nodestitch', chineseTitle: '节点时间线', icon: 'projects/nodestitch.svg', platform: 'windows',
     category: '桌面 × 时间组织', status: '原型', hook: '把持续的计划，放回一条时间线。',
     description: '用单轴节点组织持续任务，在一条线上保留顺序、历史和创建时间。',
     insight: '持续计划的意义不只在于打勾，也在于看清它从哪里开始、如何推进。时间线为这种关系提供了空间。',
     boundary: '当前需从源码构建，尚无公开 Release 安装包；面向本地 Windows 场景。',
     reviewedAt: '2026-09-07', sourceUrl: 'https://github.com/wp-i/nodestitch',
-    links: [{ label: '查看原型源码', href: 'https://github.com/wp-i/nodestitch', primary: true }],
+    links: [
+      { label: 'GitHub 源码', href: 'https://github.com/wp-i/nodestitch', primary: true },
+      { label: '获取与使用', href: 'https://github.com/wp-i/nodestitch#readme' },
+    ],
     facts: ['单轴节点', '本地存储', '持续计划'],
   },
 ];

@@ -10,7 +10,7 @@ type ProjectProps = {
 
 function ProjectLinks({ project }: Pick<ProjectProps, 'project'>) {
   return (
-    <div aria-label={`${project.title} 相关链接`} className={styles.projectsLinks}>
+    <div aria-label={`${project.title} 相关链接`} className={`${styles.projectsLinks}${project.platform === 'windows' ? ` ${styles.projectsWindowsLinks}` : ''}`}>
       {project.links.map((link) => (
         <a
           className={link.primary ? styles.projectsLinkPrimary : styles.projectsLink}
@@ -54,12 +54,12 @@ function ProjectDemo({ project }: Pick<ProjectProps, 'project'>) {
 
 function ProjectEntry({ project, position }: ProjectProps) {
   return (
-    <article className={styles.projectsItem} id={project.slug}>
+    <article className={styles.projectsItem} id={project.slug} data-platform={project.platform}>
       <span className={styles.projectsNumber} aria-hidden="true">{String(position + 1).padStart(2, '0')}</span>
       <header className={styles.projectsTitleGroup}>
         <h3>
           {project.icon && <img className={styles.projectsIcon} src={`${import.meta.env.BASE_URL}${project.icon}`} width="28" height="28" alt="" loading="lazy" decoding="async" />}
-          {project.title}
+          <span>{project.title}</span>
         </h3>
         <p>{project.chineseTitle}</p>
       </header>

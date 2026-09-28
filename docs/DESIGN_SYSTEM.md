@@ -15,6 +15,13 @@ The directory contains `webArt`, `comment-vision-claw`, `tft-trait-atlas`, `swor
 
 ## Interaction and accessibility
 
+The three Windows projects use their own original icons in the same 28×28 slot,
+with a separate title text column so long names wrap beside the icon. Their two
+actions always read `GitHub 源码` then `获取与使用`: equal-width stacked rows on
+desktop, equal-width columns on narrow screens. The latter points to each
+project README, which describes its actual download or build path; a uniform
+layout must not imply that every project has a published installer.
+
 Use semantic headings, lists, links and buttons with visible keyboard focus. External links use real destinations and `rel="noreferrer"` when opened in a new window. Meaning does not depend on lime alone. The page follows normal vertical scrolling, has no autoplay or scroll hijacking, and honors `prefers-reduced-motion` by stopping canvas animation. Project rows are always visible.
 
 Shared colors, typography, gutters and motion values live in `src/styles/tokens.css`; the component presenting a layout owns its responsive rules. The project directory ends the page; no separate footer or contact area is rendered.
