@@ -57,7 +57,10 @@ function ProjectEntry({ project, position }: ProjectProps) {
     <article className={styles.projectsItem} id={project.slug}>
       <span className={styles.projectsNumber} aria-hidden="true">{String(position + 1).padStart(2, '0')}</span>
       <header className={styles.projectsTitleGroup}>
-        <h3>{project.title}</h3>
+        <h3>
+          {project.icon && <img className={styles.projectsIcon} src={`${import.meta.env.BASE_URL}${project.icon}`} width="28" height="28" alt="" loading="lazy" decoding="async" />}
+          {project.title}
+        </h3>
         <p>{project.chineseTitle}</p>
       </header>
       <div className={styles.projectsBody}>

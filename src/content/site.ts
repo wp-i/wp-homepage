@@ -3,6 +3,7 @@ export type Project = {
   readonly slug: string;
   readonly title: string;
   readonly chineseTitle: string;
+  readonly icon?: string;
   readonly category: string;
   readonly status: string;
   readonly hook: string;
@@ -80,6 +81,19 @@ const projects: readonly Project[] = [
     reviewedAt: '2026-09-07', sourceUrl: 'https://github.com/wp-i/nodestitch',
     links: [{ label: '查看原型源码', href: 'https://github.com/wp-i/nodestitch', primary: true }],
     facts: ['单轴节点', '本地存储', '持续计划'],
+  },
+  {
+    slug: 'reelink', title: 'Reelink', chineseTitle: '扫码与影视整理', icon: 'projects/reelink.svg',
+    category: '桌面 × 本地小工具', status: 'Windows 工具', hook: '读出截图里的链接，理清文件里的名字。',
+    description: '从截图中本地识别二维码，预览影视文件的新名称，再确认应用；需要的资源网站由自己添加，在紧凑窗口里随手打开。',
+    insight: '扫码和整理文件都是短暂的小动作。把它们放进一个轻量窗口，保留手动确认与可撤销的余地，让工具少打断正在做的事。',
+    boundary: '仅支持 Windows，本地优先，无运行时 LLM 或遥测。更名规则需人工核对，操作前预览、执行后可持久化撤销；资源入口不内置网站，仅点击后联网。0.1.9 源码已公开，该版本尚无 Release 安装包。',
+    reviewedAt: '2026-09-28', sourceUrl: 'https://github.com/wp-i/reelink',
+    links: [
+      { label: '查看项目与源码', href: 'https://github.com/wp-i/reelink', primary: true },
+      { label: '了解使用方法', href: 'https://github.com/wp-i/reelink#二维码' },
+    ],
+    facts: ['本地二维码识别', '更名预览与撤销', '自定义资源入口'],
   },
 ];
 export const site = {

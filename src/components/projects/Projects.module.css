@@ -8,6 +8,7 @@
 .projectsTitleGroup { min-width:0; }
 .projectsTitleGroup h3 { font-family:var(--font-sans); font-size:clamp(1.15rem,1.65vw,1.55rem); font-weight:500; line-height:1.35; letter-spacing:-.035em; overflow-wrap:anywhere; }
 .projectsTitleGroup p { margin-top:.7rem; color:var(--color-muted); font-size:.875rem; line-height:1.7; }
+.projectsIcon { display:inline-block; width:1.75rem; height:1.75rem; margin-right:.55rem; vertical-align:-.35rem; }
 .projectsBody { min-width:0; }
 .projectsMeta { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem 1rem; margin-bottom:.85rem; color:var(--color-muted); font-size:.75rem; line-height:1.6; }
 .projectsMeta span:last-child { padding:.1rem .45rem; background:var(--color-paper-soft); }

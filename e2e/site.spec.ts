@@ -8,11 +8,11 @@ test('renders the redesigned portfolio contract', async ({ page }) => {
   await expect(nav.getByRole('link', { name: '作品' })).toHaveAttribute('href', '#work');
   await expect(page.locator('#contact, a[href="#contact"]')).toHaveCount(0);
   const projects = page.locator('#work article');
-  await expect(projects).toHaveCount(5);
-  await expect(projects.locator('h3')).toHaveText(['webArt', 'comment-vision-claw', 'tft-trait-atlas', 'swordshield-notes', 'nodestitch']);
+  await expect(projects).toHaveCount(6);
+  await expect(projects.locator('h3')).toHaveText(['webArt', 'comment-vision-claw', 'tft-trait-atlas', 'swordshield-notes', 'nodestitch', 'Reelink']);
   await expect(page.getByRole('heading', { name: /精选作品|更多项目/ })).toHaveCount(0);
   for (const title of ['tft-trait-atlas', 'comment-vision-claw', 'webArt',
-    'swordshield-notes', 'nodestitch']) {
+    'swordshield-notes', 'nodestitch', 'Reelink']) {
     await expect(page.getByRole('heading', { level: 3, name: title })).toBeVisible();
   }
   for (const status of ['早期版本', '原型']) {
@@ -21,7 +21,13 @@ test('renders the redesigned portfolio contract', async ({ page }) => {
 });
 
 test('keeps every external link safe', async ({ page }) => {
-  await expect(page.locator('#work details, #work img')).toHaveCount(0);
+  await expect(page.locator('#work details, #webart img, #tft-trait-atlas img')).toHaveCount(0);
+  const reelink = page.locator('#reelink');
+  await reelink.scrollIntoViewIfNeeded();
+  await expect(reelink.locator('img')).toHaveAttribute('alt', '');
+  await expect(reelink.locator('img')).toHaveJSProperty('naturalWidth', 256);
+  await expect(reelink.locator('img')).toHaveCSS('width', '28px');
+  await expect(reelink.getByRole('link').first()).toHaveAttribute('href', 'https://github.com/wp-i/reelink');
   const links = page.locator('a[target="_blank"]');
   expect(await links.count()).toBeGreaterThan(5);
   for (const link of await links.all()) {

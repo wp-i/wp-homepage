@@ -2,7 +2,7 @@ import { site } from './site';
 describe('project content', () => {
   it('includes the playable TFT project and preserves existing destinations', () => {
     expect(site.projects.map(project => project.slug)).toEqual([
-      'webart', 'comment-vision-claw', 'tft-trait-atlas', 'swordshield-notes', 'nodestitch',
+      'webart', 'comment-vision-claw', 'tft-trait-atlas', 'swordshield-notes', 'nodestitch', 'reelink',
     ]);
     expect(site.projects.find(project => project.slug === 'tft-trait-atlas')?.links).toContainEqual({ label: '打开解算器', href: 'https://wp-i.github.io/tft-trait-atlas/', primary: true });
   });
