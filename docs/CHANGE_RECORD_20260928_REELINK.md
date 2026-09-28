@@ -17,3 +17,10 @@
 - 截图在被忽略的 `artifacts/`，不提交浏览器数据、依赖或构建产物。以上是定向可访问性检查，不代表完整 Lighthouse 审计或认证。
 
 本记录只陈述本地实际结果；远端 CI 和 Pages 部署状态以本次提交对应的 GitHub Actions 为准。
+
+## 同日排序复核
+
+- 用户指出末位优先级过低，并要求依据项目评价确定位置。按洞察、表现力、可体验程度和工程完成度综合判断，将 Reelink 从第六位移至第四位，位于 TFT 之后、剑盾纪事之前；具体权衡记录在 `PROJECT_SELECTION.md`。
+- 仅移动数据条目，保留全部项目事实、其他项目相对顺序和布局。README、内容顺序测试与 E2E 预期同步。
+- lint、typecheck、4 项单元/组件测试及生产构建通过；Chrome 1366×768 和 390×844 共 12 项 E2E 通过。生产页面实际读取顺序为 webArt、comment-vision-claw、tft-trait-atlas、Reelink、swordshield-notes、nodestitch，Reelink 编号为 04。
+- 本地未重复全浏览器矩阵；推送后的现有 CI 继续执行完整矩阵，实际远端结果以对应提交的 Actions 为准。
