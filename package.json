@@ -6,10 +6,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/prerender.mjs",
     "lint": "eslint . --max-warnings 0",
     "typecheck": "tsc -b --pretty false",
     "test": "vitest run",
+    "test:prerender": "node --test scripts/prerender.test.mjs",
     "test:e2e": "playwright test",
     "preview": "vite preview"
   },
