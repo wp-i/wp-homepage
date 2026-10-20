@@ -34,7 +34,7 @@ const projects: readonly Project[] = [
   },
   {
     slug: 'comment-vision-claw', title: 'comment-vision-claw', chineseTitle: '热评视界',
-    category: '内容 × 语境观察', status: '本地工具',
+    category: '内容 × 语境观察 · 抖音', status: '本地工具',
     hook: '有时，值得研究的\n是评论区。',
     description: '从一个关键词找到热评，留下原始语境的截图，再整理成可以回看、比较和讨论的图文报告。',
     insight: '一条评论的数据只能描述热度，原来的语境却会影响理解。这个工具把评论、截图和分析放在一起，让每个观察都有可以回看的出处。',
