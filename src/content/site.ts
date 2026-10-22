@@ -44,7 +44,7 @@ const projects: readonly Project[] = [
       { label: '查看项目与用法', href: 'https://github.com/wp-i/comment-vision-claw', primary: true },
       { label: '了解报告内容', href: 'https://github.com/wp-i/comment-vision-claw#输出说明' },
     ],
-    facts: ['按互动量筛选', '保留截图与上下文', '导出图文 PDF'],
+    facts: ['按互动量筛选', '保留截图与上下文', '导出图文 PDF', '需要本地配置、MediaCrawler 与平台登录'],
   },
   {
     slug: 'tft-trait-atlas', title: 'tft-trait-atlas', chineseTitle: '羁绊天梯',

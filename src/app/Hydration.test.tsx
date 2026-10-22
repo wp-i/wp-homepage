@@ -16,7 +16,19 @@ describe('prerendered App', () => {
     expect(before.map(article => article.id)).toEqual(site.projects.map(project => project.slug));
     const originalText = before.map(article => article.textContent);
     const originalLinks = [...container.querySelectorAll('a')].map(link => link.getAttribute('href'));
-    // Boundary/review metadata is not rendered by the current UI; do not newly expose it.
+    // This separate qualification trial intentionally exposes only the target prerequisite sentence via facts.
+    // The B-P03 no-new-content contract remains historical; full boundary/review metadata stays unrendered.
+    const prerequisites = '需要本地配置、MediaCrawler 与平台登录';
+    const target = site.projects.find(project => project.slug === 'comment-vision-claw')!;
+    expect(target.boundary.split('。')[0]).toBe(prerequisites);
+    expect(target.facts).toEqual(['按互动量筛选', '保留截图与上下文', '导出图文 PDF', prerequisites]);
+    for (const project of site.projects) {
+      const article = container.querySelector(`[id="${project.slug}"]`)!;
+      const renderedFacts = [...article.querySelectorAll('li')].map(item => item.textContent);
+      expect(renderedFacts).toEqual(project.facts);
+      expect(renderedFacts.filter(item => item === prerequisites)).toHaveLength(project === target ? 1 : 0);
+    }
+    expect(container.textContent).not.toContain(target.boundary.slice(prerequisites.length + 1));
     for (const project of site.projects) {
       expect(container.textContent).not.toContain(project.boundary);
       expect(container.textContent).not.toContain(project.reviewedAt);
