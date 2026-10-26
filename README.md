@@ -5,7 +5,7 @@ WP 的单页作品集，核心句是「做有用的软件」。页面用中文�
 ## 展示项目
 
 1. [webArt](https://github.com/wp-i/webArt)：工业化的高质量网页设计呈现。
-2. [comment-vision-claw](https://github.com/wp-i/comment-vision-claw)：关键词热评抓取、截图与 PDF；本地依赖和登录，AI 分析只解释假设。
+2. [comment-vision-claw](https://github.com/wp-i/comment-vision-claw)：抖音关键词热评抓取、截图与 PDF；需要本地配置、MediaCrawler 与平台登录，AI 分析只解释假设。作者声明，事实核对日期：2026-10-12。
 3. [tft-trait-atlas](https://wp-i.github.io/tft-trait-atlas/)：8–11 人口多纹章解算并复制代码。
 4. [Reelink](https://github.com/wp-i/reelink)：Windows 本地二维码识别、影视更名预览与撤销、自定义资源入口；`0.1.9` 源码已公开，该版本暂无 Release 安装包（2026-09-28）。
 5. [swordshield-notes](https://github.com/wp-i/swordshield-notes)：早期版本，含 `v0.1.0` Windows x64 安装包。
