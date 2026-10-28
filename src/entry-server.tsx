@@ -14,6 +14,7 @@ export function renderProjectListMetadata() {
     '@type': 'ItemList',
     itemListElement: site.projects.map(project => ({
       '@type': 'Thing', name: project.title, url: project.sourceUrl,
+      description: [project.category, project.description, ...project.facts].join('；'),
     })),
   }).replace(/</g, '\\u003c');
 }
