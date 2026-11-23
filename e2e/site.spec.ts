@@ -8,11 +8,11 @@ test('renders the redesigned portfolio contract', async ({ page }) => {
   await expect(nav.getByRole('link', { name: '作品' })).toHaveAttribute('href', '#work');
   await expect(page.locator('#contact, a[href="#contact"]')).toHaveCount(0);
   const projects = page.locator('#work article');
-  await expect(projects).toHaveCount(6);
-  await expect(projects.locator('h3')).toHaveText(['webArt', 'comment-vision-claw', 'tft-trait-atlas', 'Reelink', 'swordshield-notes', 'nodestitch']);
+  await expect(projects).toHaveCount(7);
+  await expect(projects.locator('h3')).toHaveText(['webArt', 'comment-vision-claw', 'tft-trait-atlas', 'ai-now', 'Reelink', 'swordshield-notes', 'nodestitch']);
   await expect(page.getByRole('heading', { name: /精选作品|更多项目/ })).toHaveCount(0);
   for (const title of ['tft-trait-atlas', 'comment-vision-claw', 'webArt',
-    'swordshield-notes', 'nodestitch', 'Reelink']) {
+    'swordshield-notes', 'nodestitch', 'Reelink', 'ai-now']) {
     await expect(page.getByRole('heading', { level: 3, name: title })).toBeVisible();
   }
   for (const status of ['早期版本', '原型']) {

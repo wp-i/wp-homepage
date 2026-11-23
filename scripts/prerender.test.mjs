@@ -22,7 +22,7 @@ test('production HTML and client keep the same content and subdirectory image pa
     const root = dom.window.document.getElementById('root');
     const articles = [...root.querySelectorAll('article')];
     assert.deepEqual(articles.map(article => article.id), [
-      'webart', 'comment-vision-claw', 'tft-trait-atlas',
+      'webart', 'comment-vision-claw', 'tft-trait-atlas', 'ai-now',
       'reelink', 'swordshield-notes', 'nodestitch',
     ]);
     const text = articles.map(article => article.textContent);

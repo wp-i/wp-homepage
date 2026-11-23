@@ -2,7 +2,7 @@
 
 状态：必需。意图版本：2026-09-07（取代旧的分数门槛与自动排序规则）。
 
-作品集面向交流，平等呈现六个从小切口出发的小工具，以简介、特点和真实链接帮助访客理解项目。不设精选、更多或代表作层级；展示顺序由编辑判断决定，不由工程评分自动排序。
+作品集面向交流，以简介、特点和真实链接帮助访客理解各个项目。项目平等呈现，展示顺序由编辑判断决定。
 
 ## 先过事实门槛
 
@@ -24,6 +24,7 @@
 | [webArt](https://github.com/wp-i/webArt) | 工业化的高质量网页设计呈现 | [源码与说明](https://github.com/wp-i/webArt)，2026-09-08 |
 | [comment-vision-claw](https://github.com/wp-i/comment-vision-claw) | 关键词热评抓取、截图/PDF；本地依赖与登录；AI 仅解释假设 | [仓库](https://github.com/wp-i/comment-vision-claw)，2026-09-07 |
 | [tft-trait-atlas](https://github.com/wp-i/tft-trait-atlas) | 在线 8–11 人口多纹章解算器，可复制代码 | [在线页](https://wp-i.github.io/tft-trait-atlas/)，2026-09-07 |
+| [ai-now](https://github.com/wp-i/ai-now) | 直接展示不同方向的 AI 产出与作品所体现的边界 | [在线页](https://ai-now-cn-261113.wp9617.chatgpt.site/)，2026-11-23 |
 | [Reelink](https://github.com/wp-i/reelink) | Windows 本地二维码识别、影视更名预览与持久化撤销、自定义资源入口；无运行时 LLM/遥测；`0.1.9` 源码已公开，该版本暂无 Release 安装包 | [README](https://github.com/wp-i/reelink/blob/37feeebc1e97f6456d14e70c79d56a942d9a9577/README.md) 与 [功能约定](https://github.com/wp-i/reelink/blob/37feeebc1e97f6456d14e70c79d56a942d9a9577/docs/CONTRACT.md)，2026-09-28 |
 | [swordshield-notes](https://github.com/wp-i/swordshield-notes) | 早期版本；有 releases/tag `v0.1.0` 与 Windows x64 安装包 | [仓库](https://github.com/wp-i/swordshield-notes)，2026-09-07 |
 | [nodestitch](https://github.com/wp-i/nodestitch) | 原型；暂无公开 release | [仓库](https://github.com/wp-i/nodestitch)，2026-09-07 |
@@ -41,3 +42,7 @@ Reelink 的编辑评级为“完整的实用工具，展示优先级中上”，
 - 技术完成度：Reelink 已形成识别、预览、更名、持久化撤销和隔离资源页的功能闭环，较剑盾纪事的早期版本及节点时间线原型有更充分的工程验证，因此应排在这两项之前。依据 [Reelink 验证记录](https://github.com/wp-i/reelink/blob/37feeebc1e97f6456d14e70c79d56a942d9a9577/docs/VALIDATION.md)，2026-09-28。
 
 只调整 Reelink 的位置，其他项目相对顺序、事实与核查日期不变；所有项目继续使用同一展示样式。
+
+## 2026-11-23 新增 ai-now
+
+ai-now 放在羁绊天梯之后。访客可以直接进入公开站点体验图像对照、原片与声音，进一步阅读源码和编辑记录。原六个项目的相对顺序保留。

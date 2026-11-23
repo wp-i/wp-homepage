@@ -1,15 +1,16 @@
 # WP Homepage
 
-WP 的单页作品集，核心句是「做有用的软件」。页面用中文建立主层级，平等展示六个小而美的小切口工具的简介、特点与真实链接；采用暖白底、原创 WP 视觉，并使用克制酸橙强调色。
+WP 的单页作品集，核心句是「做有用的软件」。页面用中文平等展示各个项目的简介、特点与真实链接，采用暖白底、原创 WP 视觉和克制的酸橙强调色。
 
 ## 展示项目
 
 1. [webArt](https://github.com/wp-i/webArt)：工业化的高质量网页设计呈现。
 2. [comment-vision-claw](https://github.com/wp-i/comment-vision-claw)：抖音关键词热评抓取、截图与 PDF；需要本地配置、MediaCrawler 与平台登录，AI 分析只解释假设。作者声明，事实核对日期：2026-10-12。
 3. [tft-trait-atlas](https://wp-i.github.io/tft-trait-atlas/)：8–11 人口多纹章解算并复制代码。
-4. [Reelink](https://github.com/wp-i/reelink)：Windows 本地二维码识别、影视更名预览与撤销、自定义资源入口；`0.1.9` 源码已公开，该版本暂无 Release 安装包（2026-09-28）。
-5. [swordshield-notes](https://github.com/wp-i/swordshield-notes)：早期版本，含 `v0.1.0` Windows x64 安装包。
-6. [nodestitch](https://github.com/wp-i/nodestitch)：原型，暂无公开 release。
+4. [ai-now](https://github.com/wp-i/ai-now)：通过原图、原片、音轨与可玩作品了解 AI 的能力边界。[在线浏览](https://ai-now-cn-261113.wp9617.chatgpt.site/)。
+5. [Reelink](https://github.com/wp-i/reelink)：Windows 本地二维码识别、影视更名预览与撤销、自定义资源入口；`0.1.9` 源码已公开，该版本暂无 Release 安装包（2026-09-28）。
+6. [swordshield-notes](https://github.com/wp-i/swordshield-notes)：早期版本，含 `v0.1.0` Windows x64 安装包。
+7. [nodestitch](https://github.com/wp-i/nodestitch)：原型，暂无公开 release。
 
 项目以真实可核查门槛、独特视角、表现力和互动/交流价值编排，详见 [`docs/PROJECT_SELECTION.md`](docs/PROJECT_SELECTION.md)。
 

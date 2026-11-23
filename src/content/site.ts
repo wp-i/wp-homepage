@@ -61,6 +61,20 @@ const projects: readonly Project[] = [
     facts: ['多枚纹章一起算', '8–11 人口独立求解', '复制小队代码'],
   },
   {
+    slug: 'ai-now', title: 'ai-now', chineseTitle: 'AI 能力边界',
+    category: '网页 × AI 科普', status: '可在线浏览',
+    hook: '从真实产出，看 AI 现在能做到哪一步。',
+    description: '按图像、视频、声音、游戏和网页创作浏览近期 AI 作品。可以直接拖拽看同一张图怎么改、播放原片、试听音轨，或打开作者的游戏试玩。',
+    insight: '一张有说服力的图、一段能听出变化的声音，比模型排行榜更容易让人理解实际进展。每件作品都能回到原作者或原始发布。',
+    boundary: '案例由人工核对后发布。单件成果说明这次做到了什么，重试成本和稳定性以作者公开的信息为准。',
+    reviewedAt: '2026-11-23', sourceUrl: 'https://github.com/wp-i/ai-now',
+    links: [
+      { label: '浏览网站', href: 'https://ai-now-cn-261113.wp9617.chatgpt.site/', primary: true },
+      { label: 'GitHub 源码', href: 'https://github.com/wp-i/ai-now' },
+    ],
+    facts: ['原图与原片', '可操作的前后对照', '公开来源'],
+  },
+  {
     slug: 'reelink', title: 'Reelink', chineseTitle: '扫码与影视整理', icon: 'projects/reelink.svg', platform: 'windows',
     category: '桌面 × 本地小工具', status: 'Windows 工具', hook: '读出截图里的链接，理清文件里的名字。',
     description: '从截图中本地识别二维码，预览影视文件的新名称，再确认应用；需要的资源网站由自己添加，在紧凑窗口里随手打开。',
